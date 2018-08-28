@@ -45,17 +45,23 @@ function total() {
 }
 
 function removeFromCart(item) {
- var check = false;
- for (var i = 0; i < cart.length; i++) {
-  if (cart[i].hasOwnProperty(item)) {
-    check = true;
-    cart.splice(i, 1) ;
-    return cart;
-  } else {
-    return 'That item is not in your cart.'
-  }
+   var foodChecker= false;
+  for(var i = 0;i<cart.length;i++){
+    if(cart[i].hasOwnProperty(item)){
+        foodChecker=true;
+        cart.splice(i,1);
+    
  }
 }
+  
+   if(!foodChecker){
+    console.log("That item is not in your cart.");
+  }
+    
+  
+  return cart;
+}
+
 
 
 
