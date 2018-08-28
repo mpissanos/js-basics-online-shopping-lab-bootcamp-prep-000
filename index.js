@@ -1,3 +1,4 @@
+
 var cart = [];
 
 function getCart() {
@@ -9,18 +10,18 @@ function setCart(c) {
   return cart;
 }
 
-function addToCart(item) {	
-  const price = Math.floor(Math.random() * 100)	
+function addToCart(item) {
+  const price = Math.floor(Math.random() * 100)
   var newObj = Object.assign( {itemName : item , itemPrice : price})
    cart.push(newObj);
    return `${item} has been added to your cart.`
-  	
+
 }
-   
+
 
 function viewCart() {
   if (cart.length === 0) {
-    return "Your shopping cart is empty."; 
+    return "Your shopping cart is empty.";
   } else if (cart.length === 1 ) {
     return  `In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}.` ;
   } else if ( cart.length === 2) {
@@ -29,7 +30,7 @@ function viewCart() {
      return `In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}, ${cart[1].itemName} at $${cart[1].itemPrice}, and ${cart[2].itemName} at $${cart[2].itemPrice}.`;
  }
 }
-          
+
 
 function total() {
  var subTotals = [] ;
@@ -65,7 +66,4 @@ function placeOrder(cardNumber) {
       cart = [] ;
       return `Your total cost is $${grandTotal}, which will be charged to the card ${cardNumber}.`;
    }
-}  
-
-
-  
+}
